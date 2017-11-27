@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			let nextView = storyboard.instantiateViewController(withIdentifier: "LanguageView")
 			present(nextView, animated: true, completion: nil)
 		} else if indexPath.row == 1 {
-			let nextView = storyboard.instantiateViewController(withIdentifier: "Eff잇ectView")
+			let nextView = storyboard.instantiateViewController(withIdentifier: "EffectView")
 			present(nextView, animated: true, completion: nil)
 		} else if indexPath.row == 2 {
 			let nextView = storyboard.instantiateViewController(withIdentifier: "RecommandView")
