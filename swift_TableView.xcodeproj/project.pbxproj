@@ -15,6 +15,8 @@
 		2E8D4A221FC7EB650000CD77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8D4A211FC7EB640000CD77 /* Assets.xcassets */; };
 		6E96E0521FCBCC9600577692 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96E0511FCBCC9600577692 /* LanguageViewController.swift */; };
 		6E96E0541FCBD31500577692 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96E0531FCBD31500577692 /* LanguageTableViewCell.swift */; };
+		ACC289BE1FCE852600A015EE /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC289BD1FCE852600A015EE /* ThemeViewController.swift */; };
+		ACC289C21FCE972300A015EE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC289C11FCE972300A015EE /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2E8D4A211FC7EB640000CD77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E96E0511FCBCC9600577692 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		6E96E0531FCBD31500577692 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		ACC289BD1FCE852600A015EE /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		ACC289C11FCE972300A015EE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,35 @@
 		2E8D49EC1FC7B7EB0000CD77 /* swift_TableView */ = {
 			isa = PBXGroup;
 			children = (
+				ACC289B81FCE405100A015EE /* TableViewCell */,
+				ACC289B71FCE402D00A015EE /* ViewController */,
 				2E8D4A211FC7EB640000CD77 /* Assets.xcassets */,
 				2E8D49ED1FC7B7EB0000CD77 /* AppDelegate.swift */,
-				2E8D49EF1FC7B7EB0000CD77 /* ViewController.swift */,
 				2E8D49F11FC7B7EB0000CD77 /* Main.storyboard */,
 				2E8D49F61FC7B7EB0000CD77 /* LaunchScreen.storyboard */,
 				2E8D49F91FC7B7EB0000CD77 /* Info.plist */,
-				2E8D49FF1FC7B87F0000CD77 /* CustomTableViewCell.swift */,
-				6E96E0511FCBCC9600577692 /* LanguageViewController.swift */,
-				6E96E0531FCBD31500577692 /* LanguageTableViewCell.swift */,
 			);
 			path = swift_TableView;
+			sourceTree = "<group>";
+		};
+		ACC289B71FCE402D00A015EE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E8D49EF1FC7B7EB0000CD77 /* ViewController.swift */,
+				6E96E0511FCBCC9600577692 /* LanguageViewController.swift */,
+				ACC289BD1FCE852600A015EE /* ThemeViewController.swift */,
+				ACC289C11FCE972300A015EE /* InfoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ACC289B81FCE405100A015EE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E8D49FF1FC7B87F0000CD77 /* CustomTableViewCell.swift */,
+				6E96E0531FCBD31500577692 /* LanguageTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +127,7 @@
 				TargetAttributes = {
 					2E8D49E91FC7B7EB0000CD77 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC289BE1FCE852600A015EE /* ThemeViewController.swift in Sources */,
 				6E96E0541FCBD31500577692 /* LanguageTableViewCell.swift in Sources */,
 				2E8D49F01FC7B7EB0000CD77 /* ViewController.swift in Sources */,
+				ACC289C21FCE972300A015EE /* InfoViewController.swift in Sources */,
 				2E8D49EE1FC7B7EB0000CD77 /* AppDelegate.swift in Sources */,
 				6E96E0521FCBCC9600577692 /* LanguageViewController.swift in Sources */,
 				2E8D4A001FC7B87F0000CD77 /* CustomTableViewCell.swift in Sources */,
@@ -286,11 +311,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = swift_TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phill-it.swift-TableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_TableView/ViewController/swift_TableView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,11 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = swift_TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phill-it.swift-TableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_TableView/ViewController/swift_TableView-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
